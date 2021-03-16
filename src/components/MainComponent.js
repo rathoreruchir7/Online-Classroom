@@ -9,6 +9,7 @@ import { fetchAttendanceMarks,fetchAssignmentMarks,fetchMinorMarks, fetchCourses
 import { connect } from 'react-redux';
 import AllCourses from './AllCourses';
 import CourseDetail from './CourseDetail';
+import Home from './HomeComponent';
 
 const mapStateToProps = state => {
     return {
@@ -68,6 +69,7 @@ class Main extends Component{
                     <Route exact path='/onlineAttendance' component={OnlineAttendance} />
                     <Route exact path='/courses' component={(props) => <AllCourses courses={this.props.courses} auth={this.props.auth} />} />
                     <Route exact path='/courses/:id' component={() => <CourseDetail courses={this.props.courses} auth={this.props.auth} />} />
+                    <Route exact path='/home' component={() => <Home />} />
                     <Redirect to="/users/login" />
                 </Switch>
          
